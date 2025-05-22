@@ -140,7 +140,12 @@ body {
 @media (orientation: portrait){
   .container {
     height: 50vh;
-    min-width: 420px;
+    min-width: 360px;
+    transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    -o-transform: scale(0.7);
 }
 
 #score{

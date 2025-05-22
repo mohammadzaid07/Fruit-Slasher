@@ -88,6 +88,7 @@ startButton.addEventListener('click', () => {
     startButton.disabled = true;
 
     document.getElementById('mobileInput').focus();
+
     displayAlphabets();
     countDown();
 });
@@ -106,4 +107,4 @@ resetButton.addEventListener('click', () => {
 });
 
 // Attach key listener once (not on every game start)
-document.addEventListener('keydown', handleKeyPress);
+mobileInput.addEventListener('keydown', handleKeyPress);
