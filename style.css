@@ -139,8 +139,8 @@ body {
  
 @media (orientation: portrait){
   .container {
-    height: 60vh;
-    min-width: 560px;
+    height: 50vh;
+    min-width: 420px;
 }
 
 #score{
