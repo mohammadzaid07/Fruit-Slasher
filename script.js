@@ -4,6 +4,7 @@ const resetButton = document.getElementById('reset');
 const timer = document.getElementById('timer');
 const score = document.getElementById('score');
 const appleName = document.getElementById('appleName');
+const mobileInput = document.getElementById('mobileInput')
 const slashSound = new Audio('slash.mp3');
 
 let keyLocked = false; 

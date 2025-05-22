@@ -119,6 +119,16 @@ body {
   pointer-events: none;
 }
 
+#mobileInput {
+    position: absolute;
+    opacity: 0;
+    height: 1px;
+    width: 1px;
+    border: none;
+    z-index: -1;
+}
+
+
 @keyframes strikeEffect {
   0% {
     text-decoration: none;
@@ -149,10 +159,22 @@ body {
 }
 
 #score{
-  transform: scale(0.7);
+  right: 0;
+  bottom: 0;
+  transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -o-transform: scale(0.5);
 }
 #timer{
-  transform: scale(0.7);
+  left: 0;
+  top: 0;
+  transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -o-transform: scale(0.5);
 }
 #start{
   transform: scale(0.7);
