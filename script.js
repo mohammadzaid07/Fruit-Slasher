@@ -6,6 +6,7 @@ const score = document.getElementById('score');
 const appleName = document.getElementById('appleName');
 const slashSound = new Audio('slash.mp3');
 
+let keyLocked = false; 
 let intervalId;
 let countdownInterval;
 let gameOver = false;
@@ -16,7 +17,7 @@ function getRandomAlphabet() {
     return alphabet[Math.floor(Math.random() * alphabet.length)];
 }
 
-// Returns a random delay between 300ms and 1500ms
+// Returns a random delay between 500ms and 1500ms
 function getRandomDelay() {
     return Math.floor(Math.random() * (1500 - 500 + 1)) + 500;
 }
@@ -53,11 +54,15 @@ function countDown() {
 }
 
 // Handle key presses and update score
+
+
 function handleKeyPress(e) {
-    if (gameOver) return;
+    if (gameOver || keyLocked) return;
 
     const currentLetter = appleName.textContent;
     if (currentLetter && e.key.toUpperCase() === currentLetter) {
+        keyLocked = true; // Lock key input
+
         const currentScore = parseInt(score.innerHTML.replace('Score: ', '')) || 0;
         score.innerHTML = `Score: ${currentScore + 1}`;
 
@@ -67,9 +72,11 @@ function handleKeyPress(e) {
         appleName.classList.add('strike');
         setTimeout(() => {
             appleName.classList.remove('strike');
-        }, 400);
+            keyLocked = false; // Unlock after strike animation
+        }, getRandomDelay());
     }
 }
+
 
 // Start button functionality
 startButton.addEventListener('click', () => {
