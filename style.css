@@ -140,12 +140,24 @@ body {
 @media (orientation: portrait){
   .container {
     height: 60vh;
-    min-width: 720px;
-    transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    -moz-transform: scale(0.8);
-    -ms-transform: scale(0.8);
-    -o-transform: scale(0.8);
+    min-width: 560px;
+}
+
+#score{
+  transform: scale(0.7);
+}
+#timer{
+  transform: scale(0.7);
+}
+#start{
+  transform: scale(0.7);
+
+}
+#reset{
+  transform: scale(0.7);
+}
+#apple{
+  transform: scale(0.7);
 }
 
   body {

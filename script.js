@@ -79,6 +79,8 @@ startButton.addEventListener('click', () => {
     gameOver = false;
 
     startButton.disabled = true;
+
+    document.getElementById('mobileInput').focus();
     displayAlphabets();
     countDown();
 });
