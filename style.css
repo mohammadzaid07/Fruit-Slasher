@@ -151,12 +151,12 @@ body {
   .container {
     height: 50vh;
     min-width: 360px;
-    transform: scale(0.7);
-    -webkit-transform: scale(0.7);
-    -moz-transform: scale(0.7);
-    -ms-transform: scale(0.7);
-    -o-transform: scale(0.7);
-  }
+    /* transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -o-transform: scale(0.9); */
+}
 
   #score {
     right: 0;
@@ -179,17 +179,28 @@ body {
   }
 
   #start {
-    transform: scale(0.7);
-
-  }
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+}
 
   #reset {
-    transform: scale(0.7);
-  }
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+}
 
   #apple {
-    transform: scale(0.7);
-  }
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+}
 
   body {
     align-items: flex-start;
