@@ -15,6 +15,8 @@ const slashSound = new Audio('slash.mp3');
 // Flag Variables
 let keyLocked = false;
 let gameOver = false;
+let timerAbort = false;
+let alphabetAbort = false;
 
 
 // Utility: Wait using async/await
@@ -38,7 +40,8 @@ function getRandomDelay() {
 
 // Displays alphabets using async/await
 async function displayAlphabets() {
-    while (!gameOver) {
+    alphabetAbort = false;
+    while (!gameOver && !alphabetAbort) {
         const randomLetter = getRandomAlphabet();
         appleName.textContent = randomLetter;
         await wait(getRandomDelay());
@@ -46,24 +49,28 @@ async function displayAlphabets() {
 }
 
 
+
 // 60-second countdown with async loop
 async function countDown() {
+    timerAbort = false;
     let timeLeft = 60;
     timer.innerHTML = `Time: ${timeLeft}`;
 
-    while (timeLeft >= 0 && !gameOver) {
+    while (timeLeft >= 0 && !gameOver && !timerAbort) {
         await wait(1000);
+        if (gameOver || timerAbort) break;
         timeLeft--;
         timer.innerHTML = `Time: ${timeLeft}`;
     }
 
-    if (!gameOver) {
+    if (!gameOver && !timerAbort) {
         gameOver = true;
         startButton.disabled = false;
         timer.innerHTML = `Time: Over`;
         appleName.textContent = "";
     }
 }
+
 
 
 // Handle key presses using async
@@ -121,6 +128,8 @@ startButton.addEventListener('click', async () => {
 // Reset button functionality
 resetButton.addEventListener('click', () => {
     gameOver = true;
+    timerAbort = true;
+    alphabetAbort = true;
 
     score.innerHTML = `Score: 0`;
     timer.innerHTML = `Time: 0`;
@@ -128,9 +137,9 @@ resetButton.addEventListener('click', () => {
 
     mobileInput.value = '';
     mobileInput.blur();
-
     startButton.disabled = false;
 });
+
 
 // Attach key listener once (not on every game start)
 mobileInput.addEventListener('input', handleKeyPress);
