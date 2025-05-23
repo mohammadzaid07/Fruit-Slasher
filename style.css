@@ -18,9 +18,9 @@ body {
 .container {
   width: 80vw;
   height: 90vh;
-  background-image: url('background.jpg'); 
-  background-size: cover;                
-  background-position: center;            
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
   border: 8px solid #f84b2d;
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -30,7 +30,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 
 .timer {
   position: absolute;
@@ -96,10 +95,11 @@ body {
   justify-content: center;
 }
 
-.btnContainer{
+.btnContainer {
   display: flex;
   flex-direction: row;
 }
+
 #apple {
   width: 150px;
   height: 150px;
@@ -120,23 +120,24 @@ body {
 }
 
 #mobileInput {
-    position: absolute;
-    opacity: 0;
-    height: 1px;
-    width: 1px;
-    border: none;
-    z-index: -1;
+  position: absolute;
+  opacity: 0;
+  height: 1px;
+  width: 1px;
+  border: none;
+  z-index: -1;
 }
-
 
 @keyframes strikeEffect {
   0% {
     text-decoration: none;
   }
+
   50% {
     text-decoration: line-through;
     scale: 1.1;
   }
+
   100% {
     text-decoration: line-through;
   }
@@ -146,8 +147,7 @@ body {
   animation: strikeEffect 0.3s ease-in-out;
 }
 
- 
-@media (orientation: portrait){
+@media (orientation: portrait) {
   .container {
     height: 50vh;
     min-width: 360px;
@@ -156,40 +156,43 @@ body {
     -moz-transform: scale(0.7);
     -ms-transform: scale(0.7);
     -o-transform: scale(0.7);
-}
+  }
 
-#score{
-  right: 0;
-  bottom: 0;
-  transform: scale(0.5);
-  -webkit-transform: scale(0.5);
-  -moz-transform: scale(0.5);
-  -ms-transform: scale(0.5);
-  -o-transform: scale(0.5);
-}
-#timer{
-  left: 0;
-  top: 0;
-  transform: scale(0.5);
-  -webkit-transform: scale(0.5);
-  -moz-transform: scale(0.5);
-  -ms-transform: scale(0.5);
-  -o-transform: scale(0.5);
-}
-#start{
-  transform: scale(0.7);
+  #score {
+    right: 0;
+    bottom: 0;
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+  }
 
-}
-#reset{
-  transform: scale(0.7);
-}
-#apple{
-  transform: scale(0.7);
-}
+  #timer {
+    left: 0;
+    top: 0;
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+  }
+
+  #start {
+    transform: scale(0.7);
+
+  }
+
+  #reset {
+    transform: scale(0.7);
+  }
+
+  #apple {
+    transform: scale(0.7);
+  }
 
   body {
     align-items: flex-start;
     padding-top: 20px;
   }
 }
-
